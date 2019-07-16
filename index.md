@@ -1,6 +1,19 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
 ---
+
+# Welcome
+
+## Games
+{% for game in site.games %}
+  <div class="game">
+    <h3>{{ game.title }}</h3>
+    {{ game.excerpt | remove: '<p>' | remove: '</p>' }}
+  </div>
+{% endfor %}
+
+<style>
+  .game {
+    background: cornsilk;
+    width: 50%;
+  }
+</style>
